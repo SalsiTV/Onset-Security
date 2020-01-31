@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset='utf-8'>
+        <link href="http://asset/OriginRP/security/ui/css/bootstrap.min.css" rel="stylesheet" media="all">
+        <link href="http://asset/OriginRP/security/ui/css/main.css" rel="stylesheet" media="all">
+        <script src="http://asset/OriginRP/security/ui/js/bootstrap.min.js"></script>
+         <script>
+            (function(obj)
+            {
+                ue.game = {};
+                ue.game.callevent = function(name, ...args)
+                {
+                    if (typeof name != "string") {
+                        return;
+                    }
+        
+                    if (args.length == 0) {
+                        obj.callevent(name, "")
+                    }
+                    else {
+                        let params = []
+                        for (let i = 0; i < args.length; i++) {
+                            params[i] = args[i];
+                        }
+                        obj.callevent(name, JSON.stringify(params));
+                    }
+                };
+            })(ue.game);
+            CallEvent = ue.game.callevent;
+        </script>
+    </head>    
+    <body style="background-color: rgba(255, 255, 255, 0)">
+        <div id="wrapper">
+            <div id="screen">
+                <img class="screen" src="http://asset/OriginRP/security/ui/img/screen.png"/>
+                <div class="exploitable">
+                    <button type="button" class="btn btnQuit btn-danger btn-circle" onclick="closeUI()">✖️</button>
+                    <div id = buildingName>
+                        <h1>Building Name</h1>
+                    </div>
+                    <div class="camList" id="camList">                 
+                    </div>
+                </div>
+                <img class="background" src="http://asset/OriginRP/security/ui/img/bg1.jpg"/>
+            </div>
+        </div>      
+    </body>
+    <script src="http://asset/OriginRP/security/ui/js/main.js"></script>
+</html>

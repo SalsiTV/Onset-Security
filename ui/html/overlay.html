@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset='utf-8'>
+        <link href="http://asset/OriginRP/security/ui/css/bootstrap.min.css" rel="stylesheet" media="all">
+        <link href="http://asset/OriginRP/security/ui/css/main.css" rel="stylesheet" media="all">
+        <script src="http://asset/OriginRP/security/ui/js/bootstrap.min.js"></script>
+         <script>
+            (function(obj)
+            {
+                ue.game = {};
+                ue.game.callevent = function(name, ...args)
+                {
+                    if (typeof name != "string") {
+                        return;
+                    }
+        
+                    if (args.length == 0) {
+                        obj.callevent(name, "")
+                    }
+                    else {
+                        let params = []
+                        for (let i = 0; i < args.length; i++) {
+                            params[i] = args[i];
+                        }
+                        obj.callevent(name, JSON.stringify(params));
+                    }
+                };
+            })(ue.game);
+            CallEvent = ue.game.callevent;
+        </script>
+    </head>    
+    <body style="background-color: rgb(0, 0, 0,0)">
+        <img class="overlay" src="http://asset/OriginRP/security/ui/img/cam_overlay.png"/>
+        <div class="datas">
+            <h1 id="time">16:20</h1>
+            <h1 id="camName">Cam 1</h1>
+        </div>
+    </body>
+    <script src="http://asset/OriginRP/security/ui/js/main.js"></script>
+</html>
