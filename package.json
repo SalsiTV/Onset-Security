@@ -1,0 +1,23 @@
+{
+    "author": "Bad",
+    "version": "1.0",
+    "server_scripts": [
+        "server.lua"
+    ],
+    "client_scripts": [
+        "client.lua"
+    ],
+    "files": [
+        "ui/html/overlay.html",
+        "ui/html/pc.html",
+        "ui/css/bootstrap.min.css",
+        "ui/css/main.css",
+        "ui/js/bootstrap.min.js",
+        "ui/js/main.js",
+        "ui/img/bg1.jpg",
+        "ui/img/bg2.jpg",
+        "ui/img/cam_icon.png",
+        "ui/img/cam_overley.png",
+        "ui/img/screen.png"
+    ]
+}
